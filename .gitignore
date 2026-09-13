@@ -1,0 +1,14 @@
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+frontend/build/
+cpanel-build/
+*.zip
+*.tar.gz
+.DS_Store
+backend/.env
+frontend/.env
+frontend/.env.local
+uploads/cvs/*.pdf
+backend/uploads/cvs/*.pdf
+.vercel
