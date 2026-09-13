@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Plus, Trash2, Edit2, Save, ArrowLeft, FileText, Code2, Languages } from 'lucide-react';
 import { apiUrl } from '../api';
 
@@ -21,9 +21,7 @@ export default function AdminPanel({ onLogout, onBack }) {
   });
   const token = localStorage.getItem('adminToken');
 
-  useEffect(() => { fetchData(); }, []);
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     try {
       const [jobsRes, appsRes] = await Promise.all([
@@ -40,7 +38,9 @@ export default function AdminPanel({ onLogout, onBack }) {
       }
     } catch (err) { console.error(err); }
     setLoading(false);
-  };
+  }, [token]);
+
+  useEffect(() => { fetchData(); }, [fetchData]);
 
   const handleSaveJob = async (e) => {
     e.preventDefault();
