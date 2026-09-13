@@ -1,0 +1,9 @@
+{
+  "name": "frontend-shim",
+  "private": true,
+  "scripts": {
+    "postinstall": "cd .. && npm install",
+    "build": "cd .. && npm run build && rm -rf frontend/build && cp -R build frontend/build",
+    "start": "cd .. && npm start"
+  }
+}
