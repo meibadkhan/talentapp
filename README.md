@@ -53,11 +53,14 @@ The frontend proxies API calls to `localhost:5001` automatically.
 
 1. Import this GitHub repo in [Vercel](https://vercel.com/new)
 2. Framework: Create React App
-3. Root Directory: leave default (repo uses root `vercel.json`)
-4. Add environment variable:
+3. Root Directory: `frontend`
+4. Install command: `npm install`
+5. Build command: `npm run build`
+6. Output directory: `build`
+7. Add environment variable:
    - `REACT_APP_API_URL` = `https://sofanext.co.uk`
      (your cPanel Node.js backend URL, no trailing slash)
-5. Deploy
+8. Deploy
 
 The site on Vercel will call the backend APIs on that URL.
 
